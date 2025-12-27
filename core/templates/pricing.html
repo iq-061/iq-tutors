@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Pricing | IQ Tutors{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/pricing.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="pricing-wrap">
+  <div class="container py-5">
+
+    <header class="pricing-header text-center reveal">
+      <h1 class="pricing-title">Pricing</h1>
+      <p class="pricing-subtitle">
+        Choose your year group and lesson type to see the hourly rate.
+      </p>
+    </header>
+
+    <div class="pricing-layout">
+
+      <!-- LEFT: controls -->
+      <aside class="pricing-controls reveal">
+        <div class="control-card">
+          <div class="control-title">Year group</div>
+
+          <div class="segmented" role="tablist" aria-label="Year group">
+            <button class="seg-btn is-active" type="button" data-year="y7_9" aria-selected="true">
+              Years 7–9
+            </button>
+            <button class="seg-btn" type="button" data-year="y10_11" aria-selected="false">
+              Years 10–11
+            </button>
+          </div>
+
+        </div>
+
+        <div class="control-card">
+          <div class="control-title">Lesson type</div>
+
+          <div class="segmented" role="tablist" aria-label="Lesson type">
+            <button class="seg-btn is-active" type="button" data-type="focus" aria-selected="true">
+              Focus group <span class="seg-sub">(up to 4 students)</span>
+            </button>
+            <button class="seg-btn" type="button" data-type="one" aria-selected="false">
+              1-to-1
+            </button>
+          </div>
+
+        </div>
+      </aside>
+
+      <!-- MIDDLE: price display -->
+      <main class="pricing-main reveal">
+        <div class="price-card" id="priceCard" aria-live="polite">
+          <div class="price-badge" id="priceBadge">Years 7–9 • Focus group</div>
+
+          <div class="price-row">
+            <div class="price-amount" id="priceAmount">£15</div>
+            <div class="price-unit">/ hour</div>
+          </div>
+
+          <div class="price-notes">
+            <ul class="price-list">
+              <li>Fully remote</li>
+              <li>Weekly sessions</li>
+              <li>Homework included</li>
+              <li>(Enquire for in-person rates as these may differ)</li>
+            </ul>
+          </div>
+
+          <div class="price-actions">
+            <a class="btn cta-outline btn-lg px-4" href="/contact">Reach Out</a>
+          </div>
+        </div>
+
+        <!-- Optional: simple comparison table -->
+        <section class="comparison-card reveal" aria-label="Price breakdown">
+          <h2 class="comparison-title">Full breakdown</h2>
+
+          <div class="comparison-grid">
+            <div class="comparison-col">
+              <div class="comparison-head">Years 7–9</div>
+              <div class="comparison-item">
+                <span>Focus group</span>
+                <span class="comparison-price">£15/hr</span>
+              </div>
+              <div class="comparison-item">
+                <span>1-to-1</span>
+                <span class="comparison-price">£20/hr</span>
+              </div>
+            </div>
+
+            <div class="comparison-col">
+              <div class="comparison-head">Years 10–11</div>
+              <div class="comparison-item">
+                <span>Focus group</span>
+                <span class="comparison-price">£17.50/hr</span>
+              </div>
+              <div class="comparison-item">
+                <span>1-to-1</span>
+                <span class="comparison-price">£25/hr</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  (function () {
+    const PRICES = {
+      y7_9:   { focus: "£15",    one: "£20" },
+      y10_11: { focus: "£17.50", one: "£25" }
+    };
+
+    const LABELS = {
+      y7_9: "Years 7–9",
+      y10_11: "Years 10–11",
+      focus: "Focus group",
+      one: "1-to-1"
+    };
+
+    let selectedYear = "y7_9";
+    let selectedType = "focus";
+
+    const yearButtons = document.querySelectorAll('[data-year]');
+    const typeButtons = document.querySelectorAll('[data-type]');
+
+    const priceAmount = document.getElementById("priceAmount");
+    const priceBadge = document.getElementById("priceBadge");
+    const priceCard = document.getElementById("priceCard");
+
+    function setActive(btns, matchFn) {
+      btns.forEach(b => {
+        const active = matchFn(b);
+        b.classList.toggle("is-active", active);
+        b.setAttribute("aria-selected", active ? "true" : "false");
+      });
+    }
+
+    function updatePrice() {
+      priceAmount.textContent = PRICES[selectedYear][selectedType];
+      priceBadge.textContent = `${LABELS[selectedYear]} • ${LABELS[selectedType]}`;
+
+      // small "pop" animation on change
+      if (priceCard) {
+        priceCard.classList.remove("is-updating");
+        void priceCard.offsetWidth;
+        priceCard.classList.add("is-updating");
+      }
+    }
+
+    yearButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        selectedYear = btn.dataset.year;
+        setActive(yearButtons, b => b.dataset.year === selectedYear);
+        updatePrice();
+      });
+    });
+
+    typeButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        selectedType = btn.dataset.type;
+        setActive(typeButtons, b => b.dataset.type === selectedType);
+        updatePrice();
+      });
+    });
+
+    updatePrice();
+  })();
+</script>
+{% endblock %}

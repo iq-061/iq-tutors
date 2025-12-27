@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About | IQ Tutors{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="about-wrap">
+  <div class="container py-5">
+
+    <div class="about-card reveal">
+      <h1 class="about-title">About Us</h1>
+
+      <p class="about-text">
+        We are a small, close-knit team of dedicated tutors who genuinely love teaching.
+        We believe that strong academic outcomes come from clear explanations, patience, and
+        a real understanding of how students learn — not rushed lessons or generic approaches.
+      </p>
+
+      <p class="about-text">
+        Our tutors have been teaching for years, working with students across a wide range of
+        abilities and backgrounds. Whether a student needs support building confidence,
+        strengthening foundations, or pushing towards top grades, we take the time to understand
+        their needs and adapt our teaching accordingly.
+      </p>
+
+      <p class="about-text">
+        Because we are a small team, we are able to maintain high standards across every lesson.
+        Tutors are carefully selected not only for their subject knowledge, but also for their
+        ability to explain concepts clearly, motivate students, and create a calm, supportive
+        learning environment. Reliability, professionalism, and consistency are central to how
+        we operate.
+      </p>
+
+      <p class="about-text">
+        We place a strong emphasis on structured learning, regular feedback, and exam awareness.
+        Lessons are designed to be engaging and purposeful, while homework is focused and
+        manageable — reinforcing learning without overwhelming students. Over time, this approach
+        helps students become more confident, independent learners.
+      </p>
+
+      <p class="about-text">
+        Here at IQ Tutors, teaching is not treated as a side activity — it is something we care deeply
+        about. We take pride in seeing students grow academically and personally, and we are
+        committed to supporting them throughout their journey from early secondary school through
+        to GCSE success.
+      </p>
+    </div>
+
+    <div class="about-image-wrap reveal">
+      <img src="{% static 'images/about.jpg' %}" alt="IQ Tutors teaching" class="about-image">
+      <div class="about-image-overlay"></div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,288 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home | IQ Tutors{% endblock %}
+{% block nav_home_active %}active{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="home-wrap">
+
+  <!-- HERO -->
+  <section class="home-hero">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- LEFT: moved from center to left (ONLY hero content) -->
+        <div class="hero-left">
+          <div class="hero-title-wrap mb-3 reveal">
+            <img src="{% static 'iq_book.png' %}" alt="IQ Tutors logo" class="hero-logo">
+            <h1 class="hero-title display-1 m-2">IQ Tutors</h1>
+          </div>
+
+          <p class="hero-subtitle lead mt-2 reveal">
+            Reliable tutoring - from foundations to top grades
+          </p>
+
+          <div class="d-flex flex-column flex-sm-row justify-content-start gap-2 gap-sm-3 mt-4 reveal">
+            <a class="btn cta-btn btn-lg px-4" href="/contact">Book a Free Consultation</a>
+            <a class="btn cta-outline btn-lg px-4" href="/courses">Courses</a>
+          </div>
+        </div>
+
+        <!-- RIGHT: styled image panel (not plain side-by-side) -->
+        <div class="hero-visual reveal">
+          <img src="{% static 'images/home_hero.jpg' %}" alt="Online tutoring" class="hero-image">
+          <div class="hero-image-overlay"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST / WHY US -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 reveal">
+          <div class="soft-card p-4 h-100 text-center">
+            <h4 class="fw-bold mb-2">Experienced tutors</h4>
+            <p class="mb-0">
+              Every tutor is carefully selected for <b>professionalism</b>, <b>knowledge</b>, and a calm
+              teaching style that supports student <b>confidence</b>. They are well-versed in both subject
+              expertise and in working with younger people.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 reveal">
+          <div class="soft-card p-4 h-100 text-center">
+            <h4 class="fw-bold mb-2">Tailored classes</h4>
+            <p class="mb-0">
+              Every student has different <b>needs</b> and <b>goals</b>. Lessons and homework
+              are built around these, to propel pupils in the right direction.
+              Nobody gets swept up or left behind.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 reveal">
+          <div class="soft-card p-4 h-100 text-center">
+            <h4 class="fw-bold mb-2">Affordable costs</h4>
+            <p class="mb-0">
+              Starting from <b>£15 per hour!</b> Discounts may be available. No hidden fees. See <i>Pricing</i> page for more info.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="pb-5">
+    <div class="container">
+      <div class="soft-card p-4 p-md-5 reveal">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-7">
+            <h2 class="fw-bold mb-2">How we work</h2>
+            <p class="mb-4" style="color: rgba(255,255,255,.86);">
+              A simple process that keeps students improving week upon week.
+            </p>
+
+            <div class="d-grid gap-3">
+              <div class="soft-card p-3" style="background: rgba(181,226,255,.06);">
+                <div class="fw-semibold"><span class="accent">1) Initial consultation</span> — goals, current level, and learning style</div>
+                <div class="fineprint mt-1">We learn what's needed and recommend the right plan.</div>
+              </div>
+
+              <div class="soft-card p-3" style="background: rgba(181,226,255,.06);">
+                <div class="fw-semibold"><span class="accent">2) Personalised plan</span> — topics, targets, and schedule</div>
+                <div class="fineprint mt-1">A clear route from current grade to target grade.</div>
+              </div>
+
+              <div class="soft-card p-3" style="background: rgba(181,226,255,.06);">
+                <div class="fw-semibold"><span class="accent">3) Weekly progress</span> — feedback, practice, and confidence</div>
+                <div class="fineprint mt-1">Exam technique + deliberate practice to keep improving.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="p-4 rounded-4" style="background: rgba(181,226,255,.10); border: 1px solid rgba(181,226,255,.18);">
+              <h4 class="fw-bold mb-2">Results-focused</h4>
+              <p class="mb-3" style="color: rgba(255,255,255,.86);">
+                We keep lessons very exam-aware — using mark schemes, structured practice, and past papers to guide students through the whole test process.
+              </p>
+
+              <div class="d-flex align-items-baseline gap-2">
+                <div class="display-6 fw-bold mb-0" style="color:#b5e2ff;">7+</div>
+                <div class="fw-semibold">track record</div>
+              </div>
+              <div class="fineprint mt-1">
+                Our students have consistently achieved a minimum of grade 7 across their tutored subjects.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="pb-5">
+    <div class="container">
+      <div class="text-center mb-4 reveal">
+        <h2 class="fw-bold mb-2">What parents & students say</h2>
+        <p class="mb-0" style="color: rgba(255,255,255,.80);">
+          Hear from pupils we've supported over the years
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-4 reveal">
+          <div class="soft-card p-4 h-100">
+            <p class="quote mb-3">
+              The lessons were organised and really clear. My confidence improved and I finally understood the topics I was stuck on.
+            </p>
+            <div class="fw-semibold">Student (Year 11)</div>
+            <div class="fineprint">GCSE</div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 reveal">
+          <div class="soft-card p-4 h-100">
+            <p class="quote mb-3">
+              Quite professional and reliable. We got regular feedback, and the exam technique advice helped a lot. My daughter never dreaded a single lesson.
+            </p>
+            <div class="fw-semibold">Parent</div>
+            <div class="fineprint">GCSE</div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 reveal">
+          <div class="soft-card p-4 h-100">
+            <p class="quote mb-3">
+              The tutor who I worked with, Haris, was patient and explained things step-by-step. Homework was targeted and actually helped. Strongly recommend.
+            </p>
+            <div class="fw-semibold">Parent</div>
+            <div class="fineprint">KS3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="pb-5">
+    <div class="container">
+      <div class="text-center mb-4 reveal">
+        <h2 class="fw-bold mb-2">FAQs</h2>
+      </div>
+
+      <div class="accordion accordion-flush d-grid gap-3 reveal" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne">
+              How do online lessons work?
+            </button>
+          </h2>
+          <div id="faqCollapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Lessons run live online using screen-sharing and interactive practice. Students get clear explanations, worked examples,
+              and guided questions — just like in-person, but with more flexibility. No extra equipment required.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo">
+              Do you offer in-person tutoring?
+            </button>
+          </h2>
+          <div id="faqCollapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes — in-person tutoring may be available in the Hayes area depending on tutor availability. Otherwise, we provide fully online tuition.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseThree">
+              How do you tailor lessons for different abilities?
+            </button>
+          </h2>
+          <div id="faqCollapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              We start with a quick assessment of strengths and gaps, then build a plan around the student’s target grade. Lessons adapt week by week,
+              with targeted practice and feedback to keep progress steady.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFour">
+              Do you set homework?
+            </button>
+          </h2>
+          <div id="faqCollapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes — homework is distributed as tasks that reinforce the lesson. It is made to be manageable, with feedback provided weekly.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqFive">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFive">
+              What year groups do you teach?
+            </button>
+          </h2>
+          <div id="faqCollapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              We offer tuition for <span class="accent fw-semibold">Years 7–11</span>, supporting students through KS3 and GCSE preparation.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-4 reveal">
+        <a class="btn cta-btn btn-lg px-4" href="/contact">Get in touch</a>
+        <p class="fineprint mt-2 mb-0">Tell us the year group, subject(s), current grade and target grade — we’ll take it from there.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  // Smooth reveal on scroll (clean + lightweight)
+  (function () {
+    const items = document.querySelectorAll('.reveal');
+    if (!items.length) return;
+
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+      items.forEach(el => el.classList.add('is-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    items.forEach(el => observer.observe(el));
+  })();
+</script>
+{% endblock %}

@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+*.log
+.venv/
+venv/
+
+# Django
+*.mo
+local_settings.py
+db.sqlite3
+media/
+
+# Static collection output
+staticfiles/
+
+# OS
+.DS_Store

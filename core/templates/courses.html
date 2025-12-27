@@ -1,0 +1,216 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Courses | IQ Tutors{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/courses.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="courses-wrap">
+  <div class="container py-5">
+    <div class="courses-layout">
+
+      <!-- LEFT: Sidebar -->
+      <aside class="courses-sidebar reveal">
+        <h2 class="courses-sidebar-title">Courses</h2>
+
+        <div class="year-buttons" role="tablist">
+          <button class="year-btn is-active" data-target="y7">Year 7</button>
+          <button class="year-btn" data-target="y8">Year 8</button>
+          <button class="year-btn" data-target="y9">Year 9</button>
+          <button class="year-btn" data-target="y10">Year 10</button>
+          <button class="year-btn" data-target="y11">Year 11</button>
+        </div>
+
+        <div class="subjects-box">
+          <div class="subjects-title">Subjects Offered</div>
+          <ul class="subjects-list">
+            <li>Maths</li>
+            <li>English Language</li>
+            <li>English Literature</li>
+            <li>Biology</li>
+            <li>Chemistry</li>
+            <li>Physics</li>
+            <li>Geography</li>
+            <li>Computer Science</li>
+          </ul>
+
+          <div class="subjects-title mt-3">Exam Boards</div>
+          <ul class="subjects-list">
+            <li>AQA</li>
+            <li>Edexcel</li>
+            <li>OCR</li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- RIGHT: Content -->
+      <main class="courses-main reveal">
+
+        <!-- Course card -->
+        <div class="course-card" id="courseCard">
+
+          <section class="course-panel is-visible" data-panel="y7">
+            <h1 class="course-title">Year 7 (KS3)</h1>
+            <div class="course-subtitle">Building confidence and strong foundations</div>
+
+            <p class="course-text">
+              Year 7 is about settling in and building habits that lead to long-term success. Lessons are engaging,
+              supportive, and structured to develop confidence and core skills.
+            </p>
+
+            <p class="course-text">
+              Homework is short, focused, and purposeful, reinforcing lesson content while laying strong foundations
+              for GCSE study later on.
+            </p>
+
+            <div class="course-highlight">
+              Includes preparation for term tests and end-of-year exams.
+            </div>
+
+            <div class="course-meta">
+              Course Duration: 1 Year<br>
+              Weekly Hours: 2
+            </div>
+          </section>
+
+          <section class="course-panel" data-panel="y8" hidden>
+            <h1 class="course-title">Year 8 (KS3)</h1>
+            <div class="course-subtitle">Developing skills and consistency</div>
+
+            <p class="course-text">
+              Year 8 focuses on strengthening understanding and linking topics together.
+              Lessons and homework are tailored to build consistency and strong study habits.
+            </p>
+
+            <p class="course-text">
+              We begin introducing exam-style thinking in a calm, supportive way to prepare students for future assessments.
+            </p>
+
+            <div class="course-highlight">
+              Includes preparation for term tests and end-of-year exams.
+            </div>
+
+            <div class="course-meta">
+              Course Duration: 1 Year<br>
+              Weekly Hours: 2
+            </div>
+          </section>
+
+          <section class="course-panel" data-panel="y9" hidden>
+            <h1 class="course-title">Year 9 (KS3)</h1>
+            <div class="course-subtitle">Strengthening foundations for GCSE</div>
+
+            <p class="course-text">
+              Year 9 refines key skills and closes knowledge gaps.
+              Lessons focus on confidence, independence, and tackling more challenging questions.
+            </p>
+
+            <p class="course-text">
+              Homework supports steady progress and prepares students for the increased demands of GCSE study.
+            </p>
+
+            <div class="course-highlight">
+              Includes preparation for term tests and end-of-year exams.
+            </div>
+
+            <div class="course-meta">
+              Course Duration: 1 Year<br>
+              Weekly Hours: 2
+            </div>
+          </section>
+
+          <section class="course-panel" data-panel="y10" hidden>
+            <h1 class="course-title">Year 10 (GCSE)</h1>
+            <div class="course-subtitle">GCSE content with exam technique</div>
+
+            <p class="course-text">
+              Year 10 marks the start of focused GCSE preparation.
+              Lessons and homework are engaging and structured to secure understanding.
+            </p>
+
+            <p class="course-text">
+              All Year 10 content is covered thoroughly alongside exam technique for term tests and mocks.
+            </p>
+
+            <div class="course-highlight">
+              Includes full Year 10 syllabus coverage and exam preparation.
+            </div>
+
+            <div class="course-meta">
+              Course Duration: 1 Year<br>
+              Weekly Hours: 2
+            </div>
+          </section>
+
+          <section class="course-panel" data-panel="y11" hidden>
+            <h1 class="course-title">Year 11 (GCSE)</h1>
+            <div class="course-subtitle">Revision, mastery, and exam performance</div>
+
+            <p class="course-text">
+              Year 11 is the final push towards GCSE success.
+              Lessons focus on confidence, performance, and exam readiness.
+            </p>
+
+            <p class="course-text">
+              The entire GCSE syllabus is covered and revisited with intensive exam practice,
+              mock preparation, and increased revision towards exam season.
+            </p>
+
+            <div class="course-highlight">
+              Includes full GCSE coverage, mock prep, and intensive revision.
+            </div>
+
+            <div class="course-meta">
+              Course Duration: 1 Year<br>
+              Weekly Hours: 2 (more available near exams)
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Image panel -->
+        <div class="courses-image-panel reveal">
+          <img src="{% static 'images/courses_side.jpg' %}" alt="IQ Tutors tuition" class="courses-image">
+          <div class="courses-image-overlay"></div>
+        </div>
+
+      </main>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  (function () {
+    const buttons = document.querySelectorAll('.year-btn');
+    const panels = document.querySelectorAll('.course-panel');
+
+    function showPanel(target) {
+      panels.forEach(p => {
+        if (p.dataset.panel === target) {
+          p.hidden = false;
+          p.classList.remove('is-visible');
+          void p.offsetWidth;
+          p.classList.add('is-visible');
+        } else {
+          p.hidden = true;
+          p.classList.remove('is-visible');
+        }
+      });
+
+      buttons.forEach(b => {
+        b.classList.toggle('is-active', b.dataset.target === target);
+      });
+    }
+
+    buttons.forEach(btn =>
+      btn.addEventListener('click', () => showPanel(btn.dataset.target))
+    );
+  })();
+</script>
+{% endblock %}
