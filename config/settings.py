@@ -23,16 +23,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY", "dev-only-secret-key")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", "False") == "True"
+# DEBUG = True
 ALLOWED_HOSTS = [
     "iq-tutors.co.uk",
     "www.iq-tutors.co.uk",
     ".onrender.com",
+    "localhost"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "https://iq-tutors.co.uk",
     "https://www.iq-tutors.co.uk",
 ]
+
+SITE_ID = 1
 
 
 # Application definition
@@ -44,8 +48,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "django.contrib.sites",
+    "django.contrib.sitemaps",
     'core'
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
