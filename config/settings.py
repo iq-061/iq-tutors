@@ -125,18 +125,3 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
-
-# # --- Email (Gmail SMTP) ---
-# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-
-# EMAIL_HOST = "smtp.gmail.com"
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_USE_SSL = False  # keep False when using TLS on 587
-
-# EMAIL_HOST_USER = "iqtutors.enquire@gmail.com"
-# EMAIL_HOST_PASSWORD = "syhcvxvttqeajtov"
-
-# # Your contact form settings
-# CONTACT_TO_EMAIL = "iqtutors.enquire@gmail.com"
-# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
