@@ -23,8 +23,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY", "dev-only-secret-key")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", "False") == "True"
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".onrender.com"]
-CSRF_TRUSTED_ORIGINS = ["https://*.onrender.com"]
+ALLOWED_HOSTS = [
+    "iq-tutors.co.uk",
+    "www.iq-tutors.co.uk",
+    ".onrender.com",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://iq-tutors.co.uk",
+    "https://www.iq-tutors.co.uk",
+]
+
 
 # Application definition
 
