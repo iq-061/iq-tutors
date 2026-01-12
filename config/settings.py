@@ -20,10 +20,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY", "dev-only-secret-key")
+SECRET_KEY = 'django-insecure-5)c1kv(!is-*zyc@twqbctt4^rphtxx(@@($0cf4k@1anof=r@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", "False") == "True"
+DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".onrender.com"]
 CSRF_TRUSTED_ORIGINS = ["https://*.onrender.com"]
@@ -136,9 +136,9 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False  # keep False when using TLS on 587
 
+EMAIL_HOST_USER = "iqtutors.enquire@gmail.com"
+EMAIL_HOST_PASSWORD = "syhcvxvttqeajtov"
 
-EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER", "")
-EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", "")
-
-DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL", EMAIL_HOST_USER)
-CONTACT_TO_EMAIL = os.environ.get("CONTACT_TO_EMAIL", EMAIL_HOST_USER)
+# Your contact form settings
+CONTACT_TO_EMAIL = "iqtutors.enquire@gmail.com"
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

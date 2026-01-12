@@ -2,18 +2,22 @@
 .btn-courses,
 .btn-about,
 .btn-pricing
-{background-color: #031747;
-color: white !important;
-transition: background-color 0.2s ease}
+{
+    background-color: #031747;
+    color: white !important;
+    transition: background-color 0.2s ease;
+}
 
 .btn-contact {
     background-color: #031747;
-    color: #b5e2ff
+    color: #b5e2ff;
+    transition: background-color 0.2s ease;
 }
 
 .btn-portal {
     background-color: #031747;
-    color: #6ac5fe
+    color: #6ac5fe;
+    transition: background-color 0.2s ease;
 }
 
 .btn-home:hover,
@@ -24,6 +28,7 @@ transition: background-color 0.2s ease}
 .btn-portal:hover
 {
     background-color: #062b7a !important;
+    color: rgb(19, 215, 19) !important;
 }
 
 .navbar-nav .btn:focus,

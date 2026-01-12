@@ -1,9 +1,112 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Portal | IQ Tutors{% endblock %}
-{% block nav_home_active %}active{% endblock %}
+{% block title %}Student Portal | IQ Tutors{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/portal.css' %}">
+{% endblock %}
 
 {% block content %}
-<h1 style="text-align: center;"><br>COMING SOON.......</h1>
-{%endblock%}
+<div class="portal-wrap">
+  <div class="container py-5">
+
+    <header class="portal-header text-center reveal">
+      <h1 class="portal-title">Student Portal</h1>
+      <p class="portal-subtitle">
+        Log in to access lesson links, homework, and feedback.
+      </p>
+    </header>
+
+    <div class="portal-single">
+
+      <section class="portal-card reveal" aria-label="Student login">
+        <div class="portal-alert portal-alert-hidden" id="loginAlert" role="alert">
+          Invalid email or password. Please try again.
+        </div>
+
+        <form class="portal-form" id="loginForm" novalidate>
+          <div class="field">
+            <label class="field-label" for="email">Email</label>
+            <input
+              class="field-input"
+              type="email"
+              id="email"
+              placeholder="student@email.com"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="password">Password</label>
+            <input
+              class="field-input"
+              type="password"
+              id="password"
+              placeholder="••••••••"
+              required
+            >
+          </div>
+
+          <div class="row-line">
+            <label class="check">
+              <input type="checkbox">
+              <span>Remember me</span>
+            </label>
+
+            <a href="#" class="small-link" onclick="return false;">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn cta-btn btn-lg w-100">
+            Login
+          </button>
+        </form>
+      </section>
+
+    </div>
+    <div class = container custom-container>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  (function () {
+    const form = document.getElementById("loginForm");
+    const alertBox = document.getElementById("loginAlert");
+
+    if (!form) return;
+
+    const showError = () => {
+      alertBox.classList.remove("portal-alert-hidden");
+      alertBox.classList.add("portal-alert-visible");
+
+      alertBox.animate(
+        [
+          { transform: "translateX(0)" },
+          { transform: "translateX(-6px)" },
+          { transform: "translateX(6px)" },
+          { transform: "translateX(0)" }
+        ],
+        { duration: 220 }
+      );
+    };
+
+    const hideError = () => {
+      alertBox.classList.add("portal-alert-hidden");
+      alertBox.classList.remove("portal-alert-visible");
+    };
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      showError();
+    });
+
+    form.querySelectorAll("input").forEach(input => {
+      input.addEventListener("input", hideError);
+    });
+  })();
+</script>
+{% endblock %}

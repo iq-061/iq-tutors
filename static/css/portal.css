@@ -1,0 +1,144 @@
+.portal-wrap {
+    background: #031747;
+    color: #ffffff;
+    padding-bottom: 350px;
+  }
+  
+  .portal-header {
+    max-width: 720px;
+    margin: 0 auto 30px;
+  }
+  
+  .portal-title {
+    font-weight: 900;
+  }
+  
+  .portal-subtitle {
+    color: rgba(255,255,255,.82);
+    margin-top: 10px;
+  }
+  
+  .portal-single {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .portal-card {
+    width: 100%;
+    max-width: 420px;
+    max-block-size: 1000px;
+    border-radius: 22px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(181,226,255,.18);
+    box-shadow: 0 18px 50px rgba(0,0,0,.18);
+    padding: 28px;
+  }
+  
+  .card-title {
+    font-weight: 800;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  .portal-form {
+    display: grid;
+    gap: 14px;
+  }
+  
+  .field {
+    display: grid;
+    gap: 6px;
+  }
+  
+  .field-label {
+    font-weight: 600;
+    color: rgba(181,226,255,.95);
+  }
+  
+  .field-input {
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid rgba(181,226,255,.18);
+    background: rgba(3,23,71,.35);
+    color: #ffffff;
+    padding: 12px 14px;
+    outline: none;
+  }
+  
+  .field-input::placeholder {
+    color: rgba(255,255,255,.55);
+  }
+  
+  .field-input:focus {
+    border-color: rgba(181,226,255,.55);
+    box-shadow: 0 0 0 3px rgba(181,226,255,.12);
+  }
+  
+  .row-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 4px;
+  }
+  
+  .check {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255,255,255,.82);
+    font-size: .95rem;
+  }
+  
+  .small-link {
+    color: #b5e2ff;
+    text-decoration: none;
+    font-size: .95rem;
+  }
+  
+  .small-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Error message */
+  .portal-alert {
+    border-radius: 16px;
+    border: 1px solid rgba(255, 180, 180, .35);
+    background: rgba(255, 120, 120, .12);
+    color: rgba(255,255,255,.92);
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+  
+  .portal-alert-hidden {
+    display: none;
+  }
+  
+  .portal-alert-visible {
+    display: block;
+  }
+
+  .custom-container {
+    max-width: 200px;
+    max-height: 500px;
+  }
+
+
+  /* Ensure login button matches site theme */
+.portal-card .cta-btn {
+    background-color: #062b7a;
+    color: #ffffff !important;
+    border: none;
+  }
+  
+  .portal-card .cta-btn:hover {
+    background-color: #0a3c9e;
+  }
+  
+  .portal-card .cta-btn:focus,
+  .portal-card .cta-btn:active {
+    background-color: #0a3c9e;
+    box-shadow: none;
+  }
+  
