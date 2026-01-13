@@ -13,3 +13,9 @@ class StaticViewSitemap(Sitemap):
 
     def location(self, item):
         return reverse(item)
+
+    def get_urls(self, page=1, site=None, protocol=None):
+        # Force the correct domain for production
+        from django.contrib.sites.models import Site
+        site = Site.objects.get(id=1)   # should be iq-tutors.co.uk
+        return super().get_urls(page=page, site=site, protocol=self.protocol)
