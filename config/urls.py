@@ -14,7 +14,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
+from django.views.generic import RedirectView
 from django.contrib.sitemaps.views import sitemap
 from core.sitemaps import StaticViewSitemap
 from django.contrib import admin
@@ -38,6 +38,6 @@ urlpatterns = [
     path('about/', about, name = 'about'),
     path('contact/', contact, name = 'contact'),
     path('pricing/', pricing, name = 'pricing'),
-    path('portal', portal, name = 'portal'),
-    path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="django.contrib.sitemaps.views.sitemap")
+    path('portal/', portal, name = 'portal'),
+    path("sitemap.xml",RedirectView.as_view(url="/static/sitemap.xml",permanent=True))
 ]
