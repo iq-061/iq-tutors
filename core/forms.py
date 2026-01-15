@@ -15,6 +15,11 @@ class ContactTicketForm(forms.ModelForm):
                 "placeholder": "e.g. johndoe@something.com"
             }),
             
+            "phone": forms.TextInput(attrs={
+                "class": "form-control",
+                "placeholder": "07898765432"
+            }),
+            
             "yearGroup": forms.Select(attrs={
                 "class": "form-select",
             }),

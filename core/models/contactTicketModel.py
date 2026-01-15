@@ -3,6 +3,7 @@ from django.db import models
 class ContactTicket(models.Model):
     authorName = models.CharField(max_length=100)
     email = models.CharField(max_length=300)
+    phone = models.CharField(max_length=20, blank=True)
     lesson_type_choices = {
         "1_TO_1": "1 to 1",
         "FOCUS_GROUP": "Focus Group"
@@ -17,4 +18,5 @@ class ContactTicket(models.Model):
     }
     yearGroup = models.CharField(max_length=2, choices=year_group_choices)
     desc = models.TextField()
+    
 

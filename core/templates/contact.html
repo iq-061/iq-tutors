@@ -37,6 +37,12 @@
         </div>
 
         <div class="mb-3">
+          <label class="form-label fw-medium" for="{{ form.phone.id_for_label }}">Phone Number (Optional):</label>
+          {{ form.phone }}
+          {{ form.phone.errors }}
+        </div>
+
+        <div class="mb-3">
           <label class="form-label fw-medium" for="{{ form.yearGroup.id_for_label }}">Year Group:</label>
           {{ form.yearGroup }}
           {{ form.yearGroup.errors }}
