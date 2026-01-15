@@ -2,7 +2,9 @@
 {% load static %}
 
 {% block title %}About | IQ Tutors{% endblock %}
-
+{% block meta_description %}We are a small, close-knit team of dedicated tutors who genuinely love teaching.
+We believe that strong academic outcomes come from clear explanations, patience, and
+a real understanding of how students learn — not rushed lessons or generic approaches.{% endblock %}
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'css/about.css' %}">
 {% endblock %}
@@ -10,6 +12,40 @@
 {% block content %}
 <div class="about-wrap">
   <div class="container py-5">
+    <div class="about-card reveal">
+      <h1 class="about-title">Teaching Structure</h1>
+      <h2 class = "about-subtitle">Lessons</h2>
+      <p class = "about-text">
+        Lessons will take place at the agreed upon time every week, either in person or online. Lessons for
+        a typical course will occur at least once a week. Each lesson is typically 2 hours in length, unless
+        explicitly stated otherwise. The timing of lessons each week is dependent solely on the plan proposed in the
+        initial consultation meeting, and is subject (but unlikely) to change after the free induction lesson.
+      </p>
+      <h2 class = "about-subtitle">Homework</h2>
+      <p class = "about-text">
+        Homework will be set after every lesson, and due for the lesson after. Students are expected to complete all assigned
+        homework before every lesson, and bring it with them when they attend (or upload it to the required area). It will usually
+        consist of tasks consolidating the learning done in the lesson, and preparation for any content to be covered in the subsequent one.
+        Completion of homework is key in order to achieve the desired results, so please bear this in mind!
+      </p>
+      <h2 class = "about-subtitle">Pupil Safety</h2>
+      <p class = "about-text">
+        The safety of children we teach is of utmost importance. Our tutors are DBS checked, and we spot-check lessons
+        using recordings in order to prevent misconduct. Children strictly should not give out any personal details to tutors such as
+        emails or phone numbers, even if this is for academic purposes (e.g. homework help). The facilities for this will already be in place
+        elsewhere. We ask parents to emphasise this with the child.
+      </p>
+      <h2 class = "about-subtitle">Portal</h2>
+      <p class = "about-text">
+        Log-in credentials will become available when the student enrols into a course.
+      </p>
+      <h2 class = "about-subtitle">Payments</h2>
+      <p class = "about-text">
+        Lessons are paid for on a pay-as-you go basis, with payment due at the end of each month into the specified account. Parents will be reminded of the amount due
+        and number of lessons in a month may vary, so standing orders are discouraged. Courses will typically require an initial deposit, at the cost
+        of one lesson. Induction lessons are free of charge.
+      </p>
+    </div>
 
     <div class="about-card reveal">
       <h1 class="about-title">About Us</h1>

@@ -6,7 +6,7 @@
     <title>{% block title %}IQ Tutors{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
-        content="IQ Tutors provides expert GCSE tutoring across the UK. We have been in business for over 5 years, and help our students to nothing but success! Online and in-person lessons available.">
+        content="{% block meta_description %}IQ Tutors provides expert GCSE tutoring across the UK. We have been in business for over 5 years, and help our students to nothing but success! Online and in-person lessons available. {% endblock %}">
 
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://iq-tutors.co.uk{{ request.path }}">

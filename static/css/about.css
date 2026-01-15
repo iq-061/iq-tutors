@@ -17,6 +17,10 @@
     font-weight: 900;
     margin-bottom: 18px;
   }
+
+  .about-subtitle {
+    font-weight: 300;
+  }
   
   .about-text {
     color: rgba(255,255,255,.88);
@@ -60,5 +64,9 @@
     .about-card {
       padding: 24px;
     }
+  }
+  
+  .about-card + .about-card {
+    margin-top: 2rem;
   }
   
