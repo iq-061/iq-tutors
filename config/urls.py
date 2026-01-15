@@ -39,5 +39,6 @@ urlpatterns = [
     path('contact/', contact, name = 'contact'),
     path('pricing/', pricing, name = 'pricing'),
     path('portal/', portal, name = 'portal'),
-    path("sitemap.xml",RedirectView.as_view(url="/static/sitemap.xml",permanent=True))
+    path("sitemap.xml",RedirectView.as_view(url="/static/sitemap.xml",permanent=True)),
+    path("favicon.ico", RedirectView.as_view(url="/static/favicon.ico",permanent=True))
 ]
